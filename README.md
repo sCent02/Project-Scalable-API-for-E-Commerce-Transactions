@@ -18,8 +18,13 @@ graph TD;
 
     B -->|Deployment| G[AWS (EC2, RDS, S3, Lambda)];
 
-    style B fill:#f9f,stroke:#333,stroke-width:2px;
-    style C fill:#bbf,stroke:#333,stroke-width:2px;
-    style D fill:#bfb,stroke:#333,stroke-width:2px;
-    style E fill:#ffb,stroke:#333,stroke-width:2px;
-    style G fill:#faa,stroke:#333,stroke-width:2px;
+    classDef backend fill:#f9f,stroke:#333,stroke-width:2px;
+    classDef database fill:#bbf,stroke:#333,stroke-width:2px;
+    classDef cache fill:#ffb,stroke:#333,stroke-width:2px;
+    classDef cloud fill:#faa,stroke:#333,stroke-width:2px;
+
+    class B backend;
+    class C database;
+    class D database;
+    class E cache;
+    class G cloud;
