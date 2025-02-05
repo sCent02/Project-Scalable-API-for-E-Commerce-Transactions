@@ -5,21 +5,21 @@ This project demonstrates a scalable E-Commerce API using **FastAPI, PostgreSQL,
 ## 📌 System Architecture
 
 ```mermaid
-graph TD;
-    Frontend[Frontend (React/Vue)] -->|API Requests| FastAPI[FastAPI Backend]
+graph TD
+    A[Frontend (React/Vue)] -->|API Requests| B[FastAPI Backend]
     
-    FastAPI -->|Stores User Data| PostgreSQL[PostgreSQL (Users, Orders)]
-    FastAPI -->|Stores Product Data| MongoDB[MongoDB (Product Catalog)]
-    FastAPI -->|Caches Products| Redis[Redis (Fast Caching)]
+    B -->|Stores User Data| C[PostgreSQL (Users, Orders)]
+    B -->|Stores Product Data| D[MongoDB (Product Catalog)]
+    B -->|Caches Products| E[Redis (Fast Caching)]
 
-    PostgreSQL -->|Transaction Processing| Orders[Order Processing Service]
-    Orders -->|Writes to PostgreSQL| PostgreSQL
-    Orders -->|Reads from MongoDB| MongoDB
+    C -->|Transaction Processing| F[Order Processing Service]
+    F -->|Writes to PostgreSQL| C
+    F -->|Reads from MongoDB| D
 
-    FastAPI -->|Deployment| AWS[EC2, RDS, S3, Lambda]
+    B -->|Deployment| G[AWS (EC2, RDS, S3, Lambda)]
 
-    style FastAPI fill:#f9f,stroke:#333,stroke-width:2px;
-    style PostgreSQL fill:#bbf,stroke:#333,stroke-width:2px;
-    style MongoDB fill:#bfb,stroke:#333,stroke-width:2px;
-    style Redis fill:#ffb,stroke:#333,stroke-width:2px;
-    style AWS fill:#faa,stroke:#333,stroke-width:2px;
+    style B fill:#f9f,stroke:#333,stroke-width:2px
+    style C fill:#bbf,stroke:#333,stroke-width:2px
+    style D fill:#bfb,stroke:#333,stroke-width:2px
+    style E fill:#ffb,stroke:#333,stroke-width:2px
+    style G fill:#faa,stroke:#333,stroke-width:2px
